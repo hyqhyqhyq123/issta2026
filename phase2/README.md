@@ -203,13 +203,9 @@ Set `TIER_OVERRIDE` and `CONCURRENCY_OVERRIDE` according to your API tier.
 
 Program slicing requires CPG (Code Property Graph) files. Usually generated using tools like Joern:
 
-```bash
+
 # Install Joern (example)
 # Reference: https://joern.io/docs/installation/
-
-# Generate CPG
-joern-parse --language c path/to/c/files
-```
 
 ### System Dependencies
 
