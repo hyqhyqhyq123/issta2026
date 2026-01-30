@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Calculate compression rate by token for different layers
-Supports one-click execution of three methods (original, sysevr, vuldeepecker) on two datasets (devign, primevul) for a total of six results
-"""
-
 import json
 from collections import defaultdict
 
@@ -247,4 +242,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
