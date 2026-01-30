@@ -60,7 +60,8 @@ pip install -r requirements.txt
 
 ### Additional System Dependencies
 
-Phase 1 code retrieval may depend on system tools (e.g., `cscope` / `ctags`), whether required depends on your retrieval implementation and dataset source.
+- **Phase 1**: Code retrieval may depend on system tools ( `cscope` / `ctags`), whether required depends on your retrieval implementation and dataset source.
+- **Phase 2**: Program slicing requires **Joern** for CPG (Code Property Graph) generation. See `phase2/README.md` for installation instructions.
 
 ---
 
