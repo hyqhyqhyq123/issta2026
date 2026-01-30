@@ -63,9 +63,6 @@ def main():
         #     continue
         # Collect all vulnerability-related lines
         all_vul_lines = []
-        for line_info in label_info.get('trigger_lines', []):
-            if isinstance(line_info, dict) and 'line_content' in line_info:
-                all_vul_lines.append(line_info['line_content'].strip())
         for line_info in label_info.get('related_lines', []):
             if isinstance(line_info, dict) and 'line_content' in line_info:
                 all_vul_lines.append(line_info['line_content'].strip())
@@ -140,7 +137,6 @@ def main():
                 'vul_coverage': vul_cov,
                 'matched_count': detail['matched_count'],
                 'L_vul_size': detail['L_vul_size'],
-                'trigger_lines': labeled_data[idx].get('trigger_lines', []),
                 'related_lines': labeled_data[idx].get('related_lines', [])
             }
             all_samples.append(sample_data)
@@ -149,3 +145,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
