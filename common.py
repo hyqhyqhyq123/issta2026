@@ -177,8 +177,6 @@ def retry_on_error(max_retries: int = 3, base_delay: float = 1.0):
     
     Example:
         >>> @retry_on_error(max_retries=3, base_delay=2.0)
-        ... def unstable_function():
-        ...     # 可能失败的操作
         ...     return api_call()
     """
     def decorator(func: Callable[..., T]) -> Callable[..., T]:
@@ -414,6 +412,7 @@ def clean_dict_keys(data: dict) -> dict:
         cleaned_data[clean_key] = value
     
     return cleaned_data
+
 
 
 
