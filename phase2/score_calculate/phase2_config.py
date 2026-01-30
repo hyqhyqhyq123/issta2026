@@ -37,47 +37,18 @@ INPUT_JSONL = ""
 SUMMARY_FILE = ""
 OUTPUT_DIR = ""+MODEL_NAME+"/"
 # Prompt template
-PROMPT_TEMPLATE = """Role: You are a code security audit expert.
+PROMPT_TEMPLATE = """
+Role: You are a code security audit expert.
+
 Task:
-1. The Code Context includes a Target Function(marked with "// Target Function") and its callees(marked with "// Callee Function").
+1. The Code Context includes a Target Function (marked with "// Target Function") and its callees (marked with "// Callee Function").
 2. ONLY identify high-risk lines within the Target Function.
-3. Use the provided code auditing report to focus on critical data flows and
-   security-sensitive operations.
+3. Use the provided code auditing report to focus on critical data flows and security-sensitive operations.
+
 Output requirements (JSON format):
 {{ "risk_lines": ["memcpy(dst, src, size);"] }}
+
 Code: {code}
+
 Code audit report: {summary}
 """
-
-PROMPT_TEMPLATE2 = """Role: You are a code security auditing expert specializing in vulnerability detection.
-
-Code:
-{code}
-
-Code audit report
-{summary}
-
-Task: 
-1. The code above contains a Target Function (marked with "// Target Function") and its called functions (marked with "// Callee Function").
-2. Please ONLY identify risky lines within the Target Function.
-3. For each risky line, return EXACTLY ONE LINE of code (no multi-line blocks).
-4. Use the callee functions as context to understand data flow, but DO NOT mark lines from callee functions.
-5. Focus on high-confidence vulnerabilities to minimize false positives.
-
-Output requirements (JSON format):
-Return a list of potential risk points. For each risk, provide:
-- line_content: ONE line of code from the Target Function
-
-Example output:
-{{
-  "risk_lines": ["memcpy(dst, src, size);"]
-}}
-
-**Important**: 
-- Only return lines from the Target Function (not from callee functions). 
-- If you believe the real risk lies within a callee function, then, instead of returning the suspicious line from the callee, recursively trace up and return the line in the Target Function where this callee function is invoked.
-- Each line_content must be a single line (no newlines \\n in the content)
-- Remove all comments from line_content (// inline comments and /* */ block comments)
-- Return empty list if no high-confidence risks found
-
-Return only valid JSON, no additional text or Markdown."""
