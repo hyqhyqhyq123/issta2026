@@ -209,8 +209,3 @@ To ensure reproducibility, it is recommended to record the following information
 
 ---
 
-## Disclaimer
-
-This project is for research experiments and reproduction, and does not guarantee out-of-the-box use for any dataset/repository; please make necessary configurations according to your data paths and environment.
-
-
