@@ -189,12 +189,11 @@ python phase3/run.py \
 
 ---
 
-## Reproducibility Recommendations (Research-Oriented)
+## Reproducibility Recommendations 
 
 To ensure reproducibility, it is recommended to record the following information for each experiment (can be written to experiment logs or a separate `experiments/` record file):
 
 - **Code Version**: Git commit id (if using version control)
-- **Data Version**: Data file paths/hashes (e.g., calculate sha256 for JSONL)
 - **Random Seed**: Phase 3 `--seed`
 - **Hardware Information**: GPU model, CUDA/Driver version
 - **Dependency Versions**: Use this repository's `requirements.txt`
@@ -213,4 +212,5 @@ To ensure reproducibility, it is recommended to record the following information
 ## Disclaimer
 
 This project is for research experiments and reproduction, and does not guarantee out-of-the-box use for any dataset/repository; please make necessary configurations according to your data paths and environment.
+
 
