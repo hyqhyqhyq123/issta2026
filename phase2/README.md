@@ -231,8 +231,8 @@ A:
 **Q: What if slicing results are empty?**  
 A: 
 - Check if CPG files are correctly generated
-- Verify risk lines are within target function
 - Check if data dependency and control dependency graphs are complete
 
 **Q: How to process only part of the samples?**  
 A: Set `START_IDX`, `END_IDX`, or `SAMPLES` parameters in `phase2_config.py`
+
