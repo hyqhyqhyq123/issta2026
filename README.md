@@ -205,9 +205,6 @@ To ensure reproducibility, it is recommended to record the following information
 
 ## FAQ
 
-- **Q: Why does the script run with "no output/little output"?**  
-  A: This repository has removed a large number of `print` debug outputs. It is recommended to use `logging` or temporarily add logs where needed (remove after completing experiments) to avoid polluting batch experiment output.
-
 - **Q: Which script should I start with?**  
   A: If you already have context data with `callee`, you can start from Phase 2; otherwise, it is recommended to run in the order Phase 1 → Phase 2 → Phase 3.
 
@@ -216,3 +213,4 @@ To ensure reproducibility, it is recommended to record the following information
 ## Disclaimer
 
 This project is for research experiments and reproduction, and does not guarantee out-of-the-box use for any dataset/repository; please make necessary configurations according to your data paths and environment.
+
